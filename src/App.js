@@ -15,7 +15,7 @@ import {
 function App() {
   let [mylist,setmylist]=useState([])
   useEffect(()=>{
-    axios.get('http://localhost:3000/getalluser')
+    axios.get('https://romantic-torvalds-a18f8b.netlify.app//getalluser')
     .then(res=>{
       console.log(res);
       setmylist(res.data)
