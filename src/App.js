@@ -1,5 +1,6 @@
 import './App.css';
 import Header from "./MyComponents/Header";
+import { Feedback } from "./MyComponents/Feedback";
 import { Footer } from "./MyComponents/Footer";
 import { AddForm } from "./MyComponents/AddForm";
 import { About } from "./MyComponents/About";
@@ -34,7 +35,7 @@ function App() {
             return(
             <>
             <AddForm setmylist={setmylist}  />
-
+             <Feedback mylist={mylist}  />
             </>)
           }}>
           </Route>
