@@ -15,7 +15,7 @@ export const AddForm = ({setmylist}) => {
         }
         else {
             let nm = gender + "" + fname + " " + mname + " " + lname
-            axios.post("https://romantic-torvalds-a18f8b.netlify.app/newuser", { name: nm, suggestion: suggestion })
+            axios.post("https://feedback-backend-server.herokuapp.com/newuser", { name: nm, suggestion: suggestion })
                 .then(res => {
                     console.log(res);
                     
@@ -24,7 +24,7 @@ export const AddForm = ({setmylist}) => {
                     console.log(err);
                 })
             
-                axios.get('https://romantic-torvalds-a18f8b.netlify.app/getalluser')
+                axios.get('https://feedback-backend-server.herokuapp.com/getalluser')
                 .then(res=>{
                   console.log('this side=>',res);
                   setmylist(res.data)
@@ -41,7 +41,7 @@ export const AddForm = ({setmylist}) => {
     }
 
     function RefetchFeedback(){
-        axios.get('https://romantic-torvalds-a18f8b.netlify.app/getalluser')
+        axios.get('https://feedback-backend-server.herokuapp.com/getalluser')
                 .then(res=>{
                   console.log('this side=>',res);
                   setmylist(res.data)
