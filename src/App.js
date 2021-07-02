@@ -4,7 +4,7 @@ import { Footer } from "./MyComponents/Footer";
 import { AddForm } from "./MyComponents/AddForm";
 import { About } from "./MyComponents/About";
 import axios from 'axios'
-import React, { useState, useEffect } from 'react';
+import React, {useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,12 +12,10 @@ import {
 } from "react-router-dom";
 
 function App() {
-  let [mylist,setmylist]=useState([])
   useEffect(()=>{
     axios.get('https://feedback-backend-server.herokuapp.com/getalluser')
     .then(res=>{
       console.log(res);
-      setmylist(res.data)
     })
     .catch(err=>{
       console.log(err);
@@ -33,7 +31,7 @@ function App() {
           <Route exact path="/" render={()=>{
             return(
             <>
-            <AddForm setmylist={setmylist}  />
+            <AddForm/>
             </>)
           }}>
           </Route>
