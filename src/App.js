@@ -4,7 +4,7 @@ import { Footer } from "./MyComponents/Footer";
 import { AddForm } from "./MyComponents/AddForm";
 import { About } from "./MyComponents/About";
 import axios from 'axios'
-import React, {useEffect } from 'react';
+import React, { useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,7 +13,7 @@ import {
 
 function App() {
   useEffect(()=>{
-    axios.get('https://feedback-backend-server.herokuapp.com/getalluser')
+    axios.get('http://localhost:3000/getalluser')
     .then(res=>{
       console.log(res);
     })
@@ -32,6 +32,7 @@ function App() {
             return(
             <>
             <AddForm/>
+
             </>)
           }}>
           </Route>
